@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Sep, 2013 6:34:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bingoapp.db.TblUserMaster" table="tbl_user_master" catalog="atulmith_appbinggo">
+        <id name="userPk" type="java.lang.Integer">
+            <column name="user_pk" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tblUserrootMaster" class="com.bingoapp.db.TblUserrootMaster" fetch="select">
+            <column name="userroot_id" />
+        </many-to-one>
+        <property name="userName" type="string">
+            <column name="user_name" />
+        </property>
+        <property name="userUsername" type="string">
+            <column name="user_username" length="500" />
+        </property>
+        <property name="userLocation" type="string">
+            <column name="user_location" length="500" />
+        </property>
+        <property name="userLatilongi" type="string">
+            <column name="user_latilongi" length="500" />
+        </property>
+        <property name="userEmailid" type="string">
+            <column name="user_emailid" length="500" />
+        </property>
+        <property name="userPhoneno" type="string">
+            <column name="user_phoneno" length="500" />
+        </property>
+        <property name="userAddress" type="string">
+            <column name="user_address" length="500" />
+        </property>
+        <property name="userPincode" type="string">
+            <column name="user_pincode" length="500" />
+        </property>
+        <property name="userPhoto" type="binary">
+            <column name="user_photo" />
+        </property>
+        <property name="userSocialtype" type="string">
+            <column name="user_socialtype" length="500" />
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="500" />
+        </property>
+        <property name="userLatitude" type="java.lang.Double">
+            <column name="user_latitude" precision="22" scale="0" />
+        </property>
+        <property name="userLongitude" type="java.lang.Double">
+            <column name="user_longitude" precision="22" scale="0" />
+        </property>
+        <property name="userImageContentType" type="string">
+            <column name="user_image_content_type" length="500" />
+        </property>
+        <set name="tblEventcommentsDetailses" table="tbl_eventcomments_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_pk" />
+            </key>
+            <one-to-many class="com.bingoapp.db.TblEventcommentsDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Sep, 2013 6:34:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bingoapp.db.TblUserrootMaster" table="tbl_userroot_master" catalog="atulmith_appbinggo">
+        <id name="userrootId" type="int">
+            <column name="userroot_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="userrootName" type="string">
+            <column name="userroot_name" length="500" />
+        </property>
+        <set name="tblUserrootDetailses" table="tbl_userroot_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userroot_id" />
+            </key>
+            <one-to-many class="com.bingoapp.db.TblUserrootDetails" />
+        </set>
+        <set name="tblEventcommentsDetailses" table="tbl_eventcomments_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userroot_id" />
+            </key>
+            <one-to-many class="com.bingoapp.db.TblEventcommentsDetails" />
+        </set>
+        <set name="tblUserMasters" table="tbl_user_master" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userroot_id" />
+            </key>
+            <one-to-many class="com.bingoapp.db.TblUserMaster" />
+        </set>
+        <set name="tbleventdetailses" table="tbleventdetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userroot_id" />
+            </key>
+            <one-to-many class="com.bingoapp.db.Tbleventdetails" />
+        </set>
+    </class>
+</hibernate-mapping>

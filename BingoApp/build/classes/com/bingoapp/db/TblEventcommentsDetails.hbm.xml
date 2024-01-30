@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Sep, 2013 6:34:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bingoapp.db.TblEventcommentsDetails" table="tbl_eventcomments_details" catalog="atulmith_appbinggo">
+        <id name="commentPk" type="java.lang.Integer">
+            <column name="comment_pk" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tblUserrootMaster" class="com.bingoapp.db.TblUserrootMaster" fetch="select">
+            <column name="userroot_id" />
+        </many-to-one>
+        <many-to-one name="tblUserMaster" class="com.bingoapp.db.TblUserMaster" fetch="select">
+            <column name="user_pk" />
+        </many-to-one>
+        <property name="commentSocialtype" type="string">
+            <column name="comment_socialtype" length="500" />
+        </property>
+        <property name="commentText" type="binary">
+            <column name="comment_text" />
+        </property>
+        <property name="commentLink" type="string">
+            <column name="comment_link" length="500" />
+        </property>
+        <property name="commentPhoto" type="binary">
+            <column name="comment_photo" />
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="500" />
+        </property>
+        <property name="eventId" type="string">
+            <column name="event_id" length="500" />
+        </property>
+        <property name="commentId" type="string">
+            <column name="comment_id" length="500" />
+        </property>
+        <property name="commentCreatedTime" type="timestamp">
+            <column name="comment_created_time" length="19" />
+        </property>
+        <property name="commentLatitude" type="java.lang.Double">
+            <column name="comment_latitude" precision="22" scale="0" />
+        </property>
+        <property name="commentLongitude" type="java.lang.Double">
+            <column name="comment_longitude" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

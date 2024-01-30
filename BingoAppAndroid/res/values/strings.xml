@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BingoAppAndroid</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_login_home">LoginHomeActivity</string>
+    <string name="title_activity_face_book_login_page">FaceBookLoginPageActivity</string>
+    <string name="app_id">156218371242687</string>
+    <string name="title_activity_event_list_page">EventListPageActivity</string>
+    <string name="title_activity_event_details_page">EventDetailsPageActivity</string>
+    <string name="title_activity_twitter_login_page">TwitterLoginPageActivity</string>
+    <string name="instagram_id">e28c5dfc8db14b76ad75cad27ebf02ed</string>
+    <string name="instagram_secret">1af26ef5df5e44bf8956a16599b37520</string>
+    <string name="callbackurl">http://www.fasttechinfo.biz</string>
+    <string name="title_activity_intagram_login_page">InstagramLoginPageActivity</string>
+    <string name="title_activity_home_page_">HomePage_Activity</string>
+
+</resources>

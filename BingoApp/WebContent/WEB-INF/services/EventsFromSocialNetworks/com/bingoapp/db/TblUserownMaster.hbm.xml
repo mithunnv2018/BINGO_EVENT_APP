@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Sep, 2013 6:34:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bingoapp.db.TblUserownMaster" table="tbl_userown_master" catalog="atulmith_appbinggo">
+        <id name="userownPk" type="int">
+            <column name="userown_pk" />
+            <generator class="assigned" />
+        </id>
+        <property name="userownName" type="string">
+            <column name="userown_name" />
+        </property>
+        <property name="userownUsername" type="string">
+            <column name="userown_username" length="500" />
+        </property>
+        <property name="userownLocation" type="string">
+            <column name="userown_location" length="500" />
+        </property>
+        <property name="userownLatilongi" type="string">
+            <column name="userown_latilongi" length="500" />
+        </property>
+        <property name="userownEmailid" type="string">
+            <column name="userown_emailid" length="500" />
+        </property>
+        <property name="userownPhoneno" type="string">
+            <column name="userown_phoneno" length="500" />
+        </property>
+        <property name="userownAddress" type="string">
+            <column name="userown_address" length="500" />
+        </property>
+        <property name="userownPincode" type="string">
+            <column name="userown_pincode" length="500" />
+        </property>
+        <property name="userownPhoto" type="binary">
+            <column name="userown_photo" />
+        </property>
+        <property name="userownSocialtype" type="string">
+            <column name="userown_socialtype" length="500" />
+        </property>
+        <property name="userownId" type="string">
+            <column name="userown_id" length="500" />
+        </property>
+        <property name="userownLatitude" type="java.lang.Double">
+            <column name="userown_latitude" precision="22" scale="0" />
+        </property>
+        <property name="userownLongitude" type="java.lang.Double">
+            <column name="userown_longitude" precision="22" scale="0" />
+        </property>
+        <property name="userownImageContentType" type="string">
+            <column name="userown_image_content_type" length="500" />
+        </property>
+        <set name="tblUserrootDetailses" table="tbl_userroot_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userown_pk" />
+            </key>
+            <one-to-many class="com.bingoapp.db.TblUserrootDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+
+	<style type="text/css">
+</style>
+	<link rel="stylesheet" href="/stylecss/style.css" type="text/css"
+		media="all" />
+
+</h:head>
+<h:body>
+
+	<h:form id="form2" enctype="multipart/form-data">
+
+		<p:blockUI block="form2" trigger="idSaveAll" />
+
+		<p:ajaxStatus>
+			<f:facet name="prestart">
+				<p:graphicImage value="images/loader.gif" />
+			</f:facet>
+			<f:facet name="complete">
+				<h:outputText value=" " />
+			</f:facet>
+		</p:ajaxStatus>
+		<p:growl autoUpdate="true" />
+
+		<p:remoteCommand name="chekcredentials2addnewppttrn" autoRun="true"
+			actionListener="commonParams2.checkCredentialsForLoggedOut('userMaster','/BingoApp/loginpage.jsf')}" />
+
+		<!--
+		<div style="width:100%" align="right">
+			<p:commandButton value="Logout "
+				action="{questionsUtil.resetSessionMith('userMaster','loginpage')}"
+				style="font-size:xx-small;" />
+		</div>
+ 
+		 
+ 
+		<p:panel header="" style="width:100%;">
+
+-->
+		<p:panelGrid columns="2" cellpadding="2" id="idpanelgrid3"
+			style="width:100%;">
+			<f:facet name="header">
+				<div align="left">Event Details</div>
+			</f:facet>
+
+
+			<h:outputText value="Event Name:" />
+			<h:inputText value="#{eventMasterController.eventName}" />
+
+
+			<h:outputText value="Event Desc.:" />
+			<h:inputText value="#{eventMasterController.eventDesc}" />
+
+			<h:outputText value="Event Place:" />
+			<h:inputText value="#{eventMasterController.eventPlace}" />
+
+			<h:outputText value="Event Latitutde/Longitude:" />
+			<h:inputText value="#{eventMasterController.eventlatilongi}" />
+
+			<h:outputText value="Event Start Date and Time:" />
+			<p:calendar value="#{eventMasterController.eventStartDate}" pattern="MM/dd/yyyy HH:mm" />
+
+ 
+			<h:outputText value="Event End Date and Time:" />
+			<p:calendar value="#{eventMasterController.eventEndDate}" pattern="MM/dd/yyyy HH:mm"/>
+
+ 
+		</p:panelGrid>
+
+		<div align="left">
+			<p:fileUpload mode="advanced"
+				update="idimgmapphoto iduploadedfilename"
+				label="Choose Event Image to Upload (*.png)" auto="true"
+				allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="1048576"
+				fileUploadListener="#{eventMasterController.doUploadImage2}" />
+
+			<p:graphicImage id="idimgmapphoto"
+				value="#{eventMasterController.eventImage}" />
+		</div>
+		<br />
+		<h:outputText id="iduploadedfilename" style="font-size:20px"
+			value="File Name: #{eventMasterController.uploadedfilename}" />
+		<br />
+
+
+		<div align="right">
+			<p:commandButton update="@form" value="Save" icon="savex"
+				id="idSaveAll" ajax="true"
+				action="#{eventMasterController.doSaveEventMaster()}" />
+			<p:commandButton value="Cancel" ajax="true"
+				onclick="javascript:document.form2.reset();"
+				icon="/images/cancel 1.png" update="@form"
+				action="addnewcreateeventmaster.jsf?redirect=true" />
+		</div>
+
+		<p:dataTable rendered="true" rows="20"
+			value="#{eventMasterController.listofoldeventdetailsmaster}"
+			var="oldevent" paginator="true" style="width:100%;"
+			rowKey="#{oldevent.eventId}">
+			<f:facet name="header">
+				<div align="left">Existing Events</div>
+			</f:facet>
+			<p:column>
+				<f:facet name="header">
+					<div align="left">Event Name</div>
+				</f:facet>
+				<h:outputText value="#{QuickUtil.decode(oldevent.eventName)}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<div align="left">Event Desc.</div>
+				</f:facet>
+				<h:outputText value="#{QuickUtil.decode(oldevent.eventDesc)}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<div align="left">Place</div>
+				</f:facet>
+				<h:outputText value="#{oldevent.eventPlace}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<div align="left">Event type</div>
+				</f:facet>
+				<h:outputText value="#{oldevent.eventType}" />
+			</p:column>
+
+
+
+		</p:dataTable>
+
+		<!--		</p:panel>-->
+
+
+	</h:form>
+
+</h:body>
+
+</html>

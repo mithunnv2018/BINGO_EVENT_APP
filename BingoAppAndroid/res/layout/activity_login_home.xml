@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_bg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LoginHomeActivity" >
+
+    <ImageView
+        android:id="@+id/imageViewEvent6"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/intro_bing01" />
+
+    <ImageView
+        android:id="@+id/imageViewEvent1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewEvent6"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/intro_log_in" />
+
+    <ImageView
+        android:id="@+id/ImageView1FB"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        
+        android:layout_alignTop="@+id/imageViewEvent1"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/intro_fb" />
+
+    <ImageView
+        android:id="@+id/imageViewEvent3"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/imageViewFB"
+         
+        android:src="@drawable/intro_instr" />
+
+    <ImageView
+        android:id="@+id/imageViewFB"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/ImageView1FB"
+        android:layout_below="@+id/ImageView1FB"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/intro_twit" />
+
+    <ImageView
+        android:id="@+id/imageView6SQ"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/imageView5GP"
+        android:layout_below="@+id/imageView5GP"
+        android:src="@drawable/intro_square" />
+
+    <ImageView
+        android:id="@+id/imageView5GP"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/imageViewEvent3"
+        android:layout_below="@+id/imageViewEvent3"
+        android:src="@drawable/intro_gplus" />
+
+    <Button
+        android:id="@+id/buttonContinue2"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignRight="@+id/imageView6SQ"
+        android:layout_below="@+id/imageView6SQ"
+        android:background="@drawable/intro_white_bg"
+        android:text="Continue" />
+
+</RelativeLayout>

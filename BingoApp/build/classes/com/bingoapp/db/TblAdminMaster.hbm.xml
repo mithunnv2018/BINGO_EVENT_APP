@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Sep, 2013 6:34:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bingoapp.db.TblAdminMaster" table="tbl_admin_master" catalog="atulmith_appbinggo">
+        <id name="adminPk" type="java.lang.Integer">
+            <column name="admin_pk" />
+            <generator class="identity" />
+        </id>
+        <property name="adminUsername" type="string">
+            <column name="admin_username" length="45" not-null="true" />
+        </property>
+        <property name="adminPassword" type="string">
+            <column name="admin_password" length="45" not-null="true" />
+        </property>
+        <property name="adminStatus" type="string">
+            <column name="admin_status" length="100" not-null="true" />
+        </property>
+        <property name="adminEmailid" type="string">
+            <column name="admin_emailid" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

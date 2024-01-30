@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Sep, 2013 6:34:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bingoapp.db.TblUserrootDetails" table="tbl_userroot_details" catalog="atulmith_appbinggo">
+        <id name="userrootdetailsId" type="int">
+            <column name="userrootdetails_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tblUserrootMaster" class="com.bingoapp.db.TblUserrootMaster" fetch="select">
+            <column name="userroot_id" />
+        </many-to-one>
+        <many-to-one name="tblUserownMaster" class="com.bingoapp.db.TblUserownMaster" fetch="select">
+            <column name="userown_pk" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

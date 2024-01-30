@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_bg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TwitterLoginPageActivity" >
+
+    <ImageView
+        android:id="@+id/imageViewEvent6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="54dp"
+        android:src="@drawable/intro_bing01" />
+
+    <ImageView
+        android:id="@+id/imageViewEvent1"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageViewEvent6"
+        android:layout_marginLeft="49dp"
+        android:src="@drawable/intro_twit" />
+
+    <Button
+        android:id="@+id/buttonTwitterLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageViewEvent6"
+        android:layout_centerVertical="true"
+        android:text="Login" />
+
+</RelativeLayout>

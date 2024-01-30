@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Sep, 2013 6:34:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bingoapp.db.Tbleventdetails" table="tbleventdetails" catalog="atulmith_appbinggo">
+        <id name="eventId" type="int">
+            <column name="event_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tblUserrootMaster" class="com.bingoapp.db.TblUserrootMaster" fetch="select">
+            <column name="userroot_id" />
+        </many-to-one>
+        <property name="eventName" type="binary">
+            <column name="event_name" />
+        </property>
+        <property name="eventImg" type="binary">
+            <column name="event_img" />
+        </property>
+        <property name="eventDesc" type="binary">
+            <column name="event_desc" />
+        </property>
+        <property name="eventPlace" type="string">
+            <column name="event_place" length="500" />
+        </property>
+        <property name="eventPlaceLatilongi" type="string">
+            <column name="event_place_latilongi" length="500" />
+        </property>
+        <property name="eventDate" type="timestamp">
+            <column name="event_date" length="19" />
+        </property>
+        <property name="adminPk" type="java.lang.Integer">
+            <column name="admin_pk" />
+        </property>
+        <property name="eventFbId" type="string">
+            <column name="event_fb_id" length="500" />
+        </property>
+        <property name="eventType" type="string">
+            <column name="event_type" length="500" />
+        </property>
+        <property name="eventStartDate" type="timestamp">
+            <column name="event_start_date" length="19" />
+        </property>
+        <property name="eventEndDate" type="timestamp">
+            <column name="event_end_date" length="19" />
+        </property>
+        <property name="eventImgType" type="string">
+            <column name="event_img_type" length="500" />
+        </property>
+        <property name="eventLatitude" type="java.lang.Double">
+            <column name="event_latitude" precision="22" scale="0" />
+        </property>
+        <property name="eventLongitude" type="java.lang.Double">
+            <column name="event_longitude" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>
